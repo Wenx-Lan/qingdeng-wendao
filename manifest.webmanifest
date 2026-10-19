@@ -1,0 +1,17 @@
+{
+  "name": "青灯问道",
+  "short_name": "青灯问道",
+  "description": "一盏残灯，照尽九霄。纯前端修仙文字游戏：十九重境界、四世轮回。",
+  "lang": "zh-CN",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#07090d",
+  "theme_color": "#0a0c10",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
