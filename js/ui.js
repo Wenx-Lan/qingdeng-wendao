@@ -1260,7 +1260,7 @@
         '<div class="story-title">' + h(title) + '</div>' +
         '<div class="story-body" id="story-body"></div>' +
         '<div class="story-foot"><span class="story-hint" id="story-hint">点击任意处继续</span>' +
-        '<button type="button" class="btn primary" id="story-done" disabled>收 入 生 平</button></div>';
+        '<button type="button" class="btn primary" id="story-done">收 入 生 平</button></div>';
       const body = box.querySelector('#story-body');
       const btn = box.querySelector('#story-done');
       const hint = box.querySelector('#story-hint');
@@ -1298,7 +1298,7 @@
       btn.onclick = function (e) { e.stopPropagation(); close(); };
       box.onclick = function (e) {
         if (e.target === btn) return;
-        if (i < els.length) next();
+        if (i < els.length) { finishReveal(); } else { close(); }
       };
       overlay.classList.remove('hidden');
       self._storyActive = true;
