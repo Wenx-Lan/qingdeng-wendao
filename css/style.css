@@ -990,6 +990,8 @@ button, .btn, .dock-btn, .adv-btn, .choice-btn, .origin-card, .item-card, .metho
 }
 .overlay-box {
   width: min(760px, 100%);
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
   position: relative;
   padding: 38px 44px 30px;
   background:
@@ -1001,7 +1003,7 @@ button, .btn, .dock-btn, .adv-btn, .choice-btn, .origin-card, .item-card, .metho
 .overlay-box::before { content: ""; position: absolute; left: 24px; right: 24px; top: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
 .story-eyebrow { text-align: center; font-size: 10px; color: var(--gold); letter-spacing: 0.5em; text-indent: 0.5em; }
 .story-title { text-align: center; margin: 8px 0 22px; font-family: var(--kai); font-size: 27px; font-weight: 400; color: var(--gold-2); letter-spacing: 0.2em; }
-.story-body { min-height: 120px; }
+.story-body { min-height: 120px; max-height: calc(100vh - 250px); overflow-y: auto; }
 .story-body p {
   margin: 0 0 14px;
   color: #c6bfb0;
