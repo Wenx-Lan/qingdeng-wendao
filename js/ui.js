@@ -101,6 +101,7 @@
     if (!s.life.maxLifespan) s.life.maxLifespan = QD.REALMS[s.life.realm].life;
     if (!s.life.history) s.life.history = [];
     if (!s.life.statuses) s.life.statuses = [];
+    if (!s.life.flags) s.life.flags = {};
     if (s.life.xianjing === undefined) s.life.xianjing = 0;
   };
 

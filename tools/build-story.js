@@ -117,7 +117,7 @@ const js =
   '(function (g) {\n' +
   "  'use strict';\n" +
   '  const QD = g.QD = g.QD || {};\n' +
-  '  QD.STORY = ' + JSON.stringify(story) + ';\n' +
+  '  QD.STORY = ' + JSON.stringify(story, null, 2) + ';\n' +
   '  QD.Story = {\n' +
   '    paras: function (s, key) {\n' +
   "      const name = (s && s.life && s.life.name) || '无名';\n" +
