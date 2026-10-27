@@ -4,7 +4,7 @@
    - 静态资源：缓存优先 + 后台刷新（stale-while-revalidate）
    更新资源后请递增 CACHE 版本号。 */
 'use strict';
-const CACHE = 'qingdeng-v1';
+const CACHE = 'qingdeng-v2';
 
 const ASSETS = [
   './',
@@ -14,6 +14,7 @@ const ASSETS = [
   './js/util.js',
   './js/data.js',
   './js/narrative.js',
+  './js/story.js',
   './js/events.js',
   './js/engine.js',
   './js/ui.js',

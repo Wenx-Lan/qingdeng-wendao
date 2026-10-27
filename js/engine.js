@@ -826,9 +826,14 @@
       L.flags = U.clone(cap.flags);
       L.recent = { closed: 0, travel: 0, craft: 0, feature: 0, dongtian: 0 };
       L.travel = null;
-      paras.push('灯火没有灭。你在黑暗里走了很久，久到忘了自己的名字。');
-      paras.push('忽然，前方亮起一点光。老瞎子的声音从光里传来：“灯芯还在。再点一次。”');
-      paras.push('你睁开眼。柳溪村的晨雾漫过柴门，你十六岁，手里空空的，可胸口有一点火星正在慢慢烧起来。');
+      const reincParas = (QD.Story && QD.Story.paras) ? QD.Story.paras(s, 'reincarnate') : null;
+      if (reincParas && reincParas.length) {
+        paras.push.apply(paras, reincParas);
+      } else {
+        paras.push('灯火没有灭。你在黑暗里走了很久，久到忘了自己的名字。');
+        paras.push('忽然，前方亮起一点光。老瞎子的声音从光里传来：“灯芯还在。再点一次。”');
+        paras.push('你睁开眼。柳溪村的晨雾漫过柴门，你十六岁，手里空空的，可胸口有一点火星正在慢慢烧起来。');
+      }
       paras.push('——第二世开始了。前世的修为，将在你重回烛照境时尽数归来。');
     } else if (mode === 'ghost') {
       const prevRealm = realmAtDeath;

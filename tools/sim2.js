@@ -2,6 +2,7 @@
 require('../js/util.js');
 require('../js/data.js');
 require('../js/narrative.js');
+require('../js/story.js');
 require('../js/events.js');
 require('../js/engine.js');
 

@@ -539,6 +539,10 @@
   }
 
   function reincarnateRestoreText(s) {
+    if (QD.Story && QD.Story.paras) {
+      const paras = QD.Story.paras(s, 'restore');
+      if (paras && paras.length) return paras;
+    }
     return [
       '你踏入烛照境的那一刻，心火忽然烧得比从前旺了十倍。',
       '内景深处那扇门开了。门后不是混沌，是一条你走过的路——山、雪、天条、灯。',
@@ -568,9 +572,14 @@
       const key = 'beat_' + realm;
       if (s.life.flags[key]) return null;
       const fn = BEATS[realm];
-      if (!fn) return null;
+      if (!fn && !(QD.Story && QD.Story.realmParas)) return null;
       s.life.flags[key] = true;
-      return fn(s);
+      // 优先播放小说对应章节（完整剧情）；无小说内容时回退到旧 BEATS。
+      if (QD.Story && QD.Story.realmParas) {
+        const storyParas = QD.Story.realmParas(s, realm);
+        if (storyParas && storyParas.length) return storyParas;
+      }
+      return fn ? fn(s) : null;
     },
     advanceText: advanceText,
     tribulationText: tribulationText,
